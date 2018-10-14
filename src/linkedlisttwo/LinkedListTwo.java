@@ -24,10 +24,15 @@ public class LinkedListTwo {
             switch (opcion)
             {
                 case 1:
+                    int dato;
+                    System.out.println("Ingrese un datito uwu");
+                    dato = teclado.nextInt();
+                    lista.insert(dato);
                     break;
                 case 2:
                     break;
                 case 3:
+                    lista.print();
                     break;
                 case 4:
                     break;
@@ -35,6 +40,14 @@ public class LinkedListTwo {
                     
                 
             }
+            
+        System.out.println("1.- Insertar dato en orden :D ");
+        System.out.println("2.- Borrar dato especifico OwO");
+        System.out.println("3.- Mostrar datos o3o");
+        System.out.println("4.- Salir conmigo ok no solo salir >w<");
+        
+        System.out.println("Que opcion desea elegir");
+        opcion = teclado.nextInt();
         }
     }
     
