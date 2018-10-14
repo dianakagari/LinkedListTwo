@@ -4,20 +4,20 @@ package linkedlisttwo;
 
 public class MyLinkedList {
 Node head;
-    void insert(int valor) { //metodo para insertar al inicio
-        Node node = new Node(valor);
-        if(isEmpty()) {
-            this.head = node;
-        } else {
-        Node siguiente = head;
-        Node actual  = null;
-            while(siguiente.siguiente =  ){
-                
-            
-            
-            head = node;
-            node.siguiente =node;
+    void insert(int valor) { //metodo para insertar 
+        Node nuevoNodo = new Node(valor);
+        if(isEmpty()) { // Si esta vacia solo se apunta el head al nuevo nodo
+            this.head = nuevoNodo;
+        } else if(head.siguiente == null && head.valor >= nuevoNodo.valor) { // Si solo tiene un elemento, y si el valor nuevo es menor al head, se inserta al inicio
+            nuevoNodo.siguiente = head;
+            head = nuevoNodo;
+        } else { // Si tiene mas de 1 elemento, se recorre la lista hasta que encuentre un valor mayor al nuevo valor o hasta que se termine la lista y se mete entre actual y actual.siguiente
+            Node actual = head;
+            while(actual.siguiente != null && actual.siguiente.valor < nuevoNodo.valor){
+                actual = actual.siguiente;
             }
+            nuevoNodo.siguiente = actual.siguiente;
+            actual.siguiente = nuevoNodo;
         }
         print();
     }
