@@ -21,6 +21,32 @@ Node head;
         }
         print();
     }
+    void erase(char valor) {
+        if(isEmpty()) {
+            // No se puede borrar
+        } else if(head.siguiente == null) { // Si solo tiene un elemento, y si el valor es el que queremos borrar, el head apunta a null
+            if (head.valor == valor) {
+                head = null;
+            }
+        } else if (head.valor == valor) { // Si el valor está en el primer nodo, entonces borramos al inicio
+            head = head.siguiente;
+        }  else { // Recorremos de 2 en 2, si encuentra el valor a borrar durante una iteracion borramos el nodo y salimos del ciclo
+            Node actual = head;
+            Node siguiente = head.siguiente;
+            while (actual != null && siguiente != null) {
+                // Empezamos a comparar a partir del segundo nodo
+                if(siguiente.valor == valor) { // Encontramos la primera incidencia. Borramos y salimos del ciclo
+                    actual.siguiente = siguiente.siguiente;
+                    siguiente.siguiente = null;
+                    break;
+                } else { // Avanzamos a los siguientes 2 nodos
+                    actual = siguiente;
+                    siguiente = actual.siguiente;
+                }
+            }
+        }
+        print();
+    }
     void print() {//metodo para saber si la lista esta vacia
     if (isEmpty()) {
         System.out.println("La lista está vacía"); 
