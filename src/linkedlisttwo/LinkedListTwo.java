@@ -24,15 +24,15 @@ public class LinkedListTwo {
             switch (opcion)
             {
                 case 1:
-                    int dato;
+                    char dato;
                     System.out.println("Ingrese un datito uwu");
-                    dato = teclado.nextInt();
+                    dato = teclado.next().charAt(0);
                     lista.insert(dato);
                     break;
                 case 2:
                     break;
                 case 3:
-                    lista.print();
+                    lista.print();  
                     break;
                 case 4:
                     break;

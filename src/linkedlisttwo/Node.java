@@ -3,10 +3,10 @@ package linkedlisttwo;
 
 
 public class Node {
-    int valor;
+    char valor;
 Node siguiente;
 
-    public Node(int valor) {
+    public Node(char valor) {
         this.valor = valor;
     }
 }

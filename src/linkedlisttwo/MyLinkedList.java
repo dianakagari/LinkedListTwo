@@ -4,7 +4,7 @@ package linkedlisttwo;
 
 public class MyLinkedList {
 Node head;
-    void insert(int valor) { //metodo para insertar 
+    void insert(char   valor) { //metodo para insertar 
         Node nuevoNodo = new Node(valor);
         if(isEmpty()) { // Si esta vacia solo se apunta el head al nuevo nodo
             this.head = nuevoNodo;
